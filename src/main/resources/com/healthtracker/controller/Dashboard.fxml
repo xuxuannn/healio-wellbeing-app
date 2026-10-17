@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="16"
+      styleClass="page-root"
+      xmlns="http://javafx.com/javafx/25"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.healthtracker.controller.DashboardController">
+
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+
+    <!-- ===== TOP AREA: Motivation + Mood ===== -->
+    <HBox spacing="14" alignment="CENTER_LEFT">
+
+        <!-- Motivation Card -->
+        <HBox alignment="CENTER_LEFT"
+              spacing="10"
+              styleClass="motivation-box"
+              HBox.hgrow="ALWAYS">
+            <ImageView fitHeight="26" fitWidth="26" preserveRatio="true">
+                <image>
+                    <Image url="@/icon/smile.png" />
+                </image>
+            </ImageView>
+
+            <Label fx:id="motivationLabel"
+                   styleClass="motivation-text"
+                   wrapText="true" />
+        </HBox>
+
+        <!-- Mood Card (Fixed Size) -->
+        <VBox spacing="8"
+              alignment="CENTER"
+              styleClass="mood-box"
+              prefWidth="260" minWidth="260" maxWidth="260">
+
+            <Label fx:id="moodDisplayLabel"
+                   text="Today’s mood: —"
+                   styleClass="mood-display"/>
+
+            <HBox spacing="10" alignment="CENTER">
+                <ImageView fx:id="moodHappy"
+                           fitWidth="30" fitHeight="30" preserveRatio="true"
+                           onMouseClicked="#chooseHappy"
+                           styleClass="mood-icon">
+                    <image><Image url="@/icon/mood_happy.png"/></image>
+                </ImageView>
+
+                <ImageView fx:id="moodNeutral"
+                           fitWidth="30" fitHeight="30" preserveRatio="true"
+                           onMouseClicked="#chooseNeutral"
+                           styleClass="mood-icon">
+                    <image><Image url="@/icon/mood_neutral.png"/></image>
+                </ImageView>
+
+                <ImageView fx:id="moodSad"
+                           fitWidth="30" fitHeight="30" preserveRatio="true"
+                           onMouseClicked="#chooseSad"
+                           styleClass="mood-icon">
+                    <image><Image url="@/icon/mood_sad.png"/></image>
+                </ImageView>
+
+                <ImageView fx:id="moodAngry"
+                           fitWidth="30" fitHeight="30" preserveRatio="true"
+                           onMouseClicked="#chooseAngry"
+                           styleClass="mood-icon">
+                    <image><Image url="@/icon/mood_angry.png"/></image>
+                </ImageView>
+            </HBox>
+        </VBox>
+
+    </HBox>
+
+    <!-- ===== Page Title ===== -->
+    <Label styleClass="page-title" text="Dashboard" />
+
+    <!-- ===== 2 COLUMN LAYOUT ===== -->
+    <HBox spacing="16">
+
+        <!-- LEFT: REMINDER -->
+        <VBox spacing="10" styleClass="dash-col" HBox.hgrow="ALWAYS">
+            <Label styleClass="section-title" text="Next 3 reminders:" />
+
+            <ListView fx:id="next3ReminderList"
+                      prefHeight="220"
+                      styleClass="list-card" />
+
+            <Label fx:id="pendingCountLabel"
+                   text="Pending reminders: 0"
+                   styleClass="meta-text"/>
+        </VBox>
+
+        <!-- RIGHT: HABIT -->
+        <VBox spacing="10" styleClass="dash-col" HBox.hgrow="ALWAYS">
+            <Label styleClass="section-title" text="Habits NOT completed today:" />
+
+            <ListView fx:id="habitsNotDoneList"
+                      prefHeight="220"
+                      styleClass="list-card" />
+
+            <!-- ✅ Replaced streak with pending habits -->
+            <Label fx:id="pendingHabitsLabel"
+                   text="Pending habits: 0"
+                   styleClass="meta-text"/>
+        </VBox>
+
+    </HBox>
+
+    <!-- ===== Bottom Header Row: Latest badges (left) + Streak (right) ===== -->
+    <HBox alignment="CENTER_LEFT">
+        <Label styleClass="section-title" text="Latest 3 badges:" />
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="streakLabel"
+               text="Current streak: 0 days"
+               styleClass="meta-text"/>
+    </HBox>
+
+    <!-- badges list -->
+    <ListView fx:id="latest3BadgesList"
+              prefHeight="140"
+              styleClass="list-card" />
+
+</VBox>

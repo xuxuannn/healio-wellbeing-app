@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/25"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.healthtracker.controller.InsightsController"
+      spacing="16"
+      styleClass="page-root">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Title -->
+    <Label text="Insights" styleClass="page-title"/>
+
+    <!-- ===== Weekly Summary Cards (Option B) ===== -->
+    <HBox spacing="16">
+
+        <!-- Weekly Habit Score -->
+        <VBox spacing="6" styleClass="dash-col" HBox.hgrow="ALWAYS">
+            <Label text="Weekly Habit Score" styleClass="section-title"/>
+            <Label fx:id="weeklyHabitScoreLabel" text="0 completions"
+                   style="-fx-font-size: 28px; -fx-font-weight: 800;"/>
+            <Label fx:id="weeklyHabitAvgLabel" text="Avg per day: 0.0"
+                   styleClass="meta-text"/>
+        </VBox>
+
+        <!-- Best Day -->
+        <VBox spacing="6" styleClass="dash-col" HBox.hgrow="ALWAYS">
+            <Label text="Best Day" styleClass="section-title"/>
+            <Label fx:id="bestDayLabel" text="—"
+                   style="-fx-font-size: 28px; -fx-font-weight: 800;"/>
+            <Label fx:id="bestDaySubLabel" text="0 completions"
+                   styleClass="meta-text"/>
+        </VBox>
+
+        <!-- Weekly Reminders -->
+        <VBox spacing="6" styleClass="dash-col" HBox.hgrow="ALWAYS">
+            <Label text="Weekly Reminders" styleClass="section-title"/>
+            <Label fx:id="weeklyReminderMainLabel" text="Done: 0 | Pending: 0"
+                   style="-fx-font-size: 20px; -fx-font-weight: 800;"/>
+            <Label fx:id="weeklyReminderSubLabel" text="Total scheduled: 0"
+                   styleClass="meta-text"/>
+        </VBox>
+
+    </HBox>
+
+    <!-- ===== Charts Card ===== -->
+    <VBox spacing="10" styleClass="dash-col">
+        <HBox alignment="CENTER_LEFT">
+            <Label text="Charts" styleClass="section-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Refresh" onAction="#refresh" styleClass="nav-btn"/>
+        </HBox>
+
+        <HBox spacing="16">
+
+            <!-- Habit Completion (Last 7 Days) -->
+            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label text="Habit Completion (Last 7 Days)" styleClass="meta-text"/>
+
+                <LineChart fx:id="habitLineChart" animated="false" createSymbols="true" legendVisible="false">
+                    <xAxis>
+                        <CategoryAxis label="Date"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis label="Completed"/>
+                    </yAxis>
+                </LineChart>
+            </VBox>
+
+            <!-- Reminder Status (This Week) - Chart B1 -->
+            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label text="Reminder Status (This Week)" styleClass="meta-text"/>
+
+                <BarChart fx:id="reminderBarChart" animated="false" legendVisible="false">
+                    <xAxis>
+                        <CategoryAxis label="Status"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis label="Count"/>
+                    </yAxis>
+                </BarChart>
+            </VBox>
+
+        </HBox>
+
+        <Label fx:id="weeklyTipLabel"
+               text="Keep going — consistency wins."
+               styleClass="meta-text"/>
+    </VBox>
+
+    <!-- ===== Mood + Next 3 Reminders ===== -->
+    <HBox spacing="16">
+
+        <!-- Mood box -->
+        <VBox spacing="10" styleClass="dash-col" prefWidth="320" minWidth="320" maxWidth="320">
+            <Label text="Today's Mood" styleClass="section-title"/>
+            <Label fx:id="moodLabel" text="—" style="-fx-font-size: 18px; -fx-font-weight: 700;"/>
+            <Separator/>
+            <Label text="Tip" styleClass="section-title"/>
+            <Label fx:id="tipLabel"
+                   wrapText="true"
+                   text="Small steps every day."
+                   styleClass="meta-text"/>
+        </VBox>
+
+        <!-- Next reminders -->
+        <VBox spacing="10" styleClass="dash-col" HBox.hgrow="ALWAYS">
+            <Label text="Next 3 Reminders" styleClass="section-title"/>
+            <ListView fx:id="nextReminderList" prefHeight="220" styleClass="list-card"/>
+        </VBox>
+    </HBox>
+
+    <!-- Keep current streak info (you requested keep current streak) -->
+    <Label fx:id="streakLabel" text="Current streak: 0 days" styleClass="meta-text"/>
+
+</VBox>

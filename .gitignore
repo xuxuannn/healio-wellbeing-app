@@ -1,0 +1,44 @@
+# sbt and Scala build output
+target/
+project/target/
+project/project/
+.bsp/
+.bloop/
+.metals/
+
+# Runtime data and logs
+healthtrackerDB/
+derby.log
+*.log
+hs_err_pid*
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+.factorypath
+
+# NetBeans and generic build output
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+build/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Operating system files
+.DS_Store
+Thumbs.db
+

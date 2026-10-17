@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.healthtracker.controller.HabitDialogController"
+            styleClass="healio-pane"
+            prefWidth="520" prefHeight="320">
+
+    <VBox spacing="18"
+          AnchorPane.topAnchor="20"
+          AnchorPane.leftAnchor="20"
+          AnchorPane.rightAnchor="20"
+          AnchorPane.bottomAnchor="20">
+
+        <Label fx:id="titleLabel" text="Add Habit" styleClass="dialog-title"/>
+        <Separator />
+
+        <GridPane hgap="14" vgap="16">
+            <columnConstraints>
+                <ColumnConstraints minWidth="95"/>
+                <ColumnConstraints hgrow="ALWAYS"/>
+            </columnConstraints>
+
+            <Label text="Title:"/>
+            <TextField fx:id="titleField" GridPane.columnIndex="1" styleClass="healio-input"/>
+
+            <Label text="Category:" GridPane.rowIndex="1"/>
+            <ComboBox fx:id="typeCombo" GridPane.rowIndex="1" GridPane.columnIndex="1" styleClass="healio-combo"/>
+        </GridPane>
+
+        <Label fx:id="msgLabel" text="" styleClass="form-error"/>
+
+        <HBox spacing="14" alignment="CENTER_RIGHT">
+            <Button text="Cancel" onAction="#handleCancel" styleClass="btn-secondary"/>
+            <Button text="Save" onAction="#handleSave" styleClass="btn-primary"/>
+        </HBox>
+
+    </VBox>
+</AnchorPane>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="267.0" prefWidth="416.0" spacing="14" styleClass="page-root" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.healthtracker.controller.ReminderDialogController">
+
+    <padding>
+        <Insets bottom="18" left="18" right="18" top="18" />
+    </padding>
+
+    <Label fx:id="titleLabel" styleClass="page-title" text="Add Reminder" />
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Title:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="titleField" promptText="e.g. Body Check" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label text="Type:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <ComboBox fx:id="typeCombo" styleClass="healio-combo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label text="Priority:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <ComboBox fx:id="priorityCombo" styleClass="healio-combo" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <Label text="Date:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <DatePicker fx:id="datePicker" styleClass="healio-date" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+    </GridPane>
+
+    <Label fx:id="msgLabel" styleClass="error-text" text="" wrapText="true" />
+
+    <HBox alignment="CENTER_RIGHT" spacing="10">
+        <!-- ✅ make Cancel same as Habit dialog -->
+        <Button onAction="#handleCancel" styleClass="secondary-btn" text="Cancel" />
+        <Button onAction="#handleSave" styleClass="nav-btn" text="Save" />
+    </HBox>
+
+</VBox>

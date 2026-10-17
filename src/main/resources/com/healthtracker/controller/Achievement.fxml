@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.healthtracker.controller.AchievementController"
+      spacing="12">
+
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <Label text="Achievement" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <Label fx:id="streakLabel" text="Current streak: 0 days" style="-fx-font-size: 14px;"/>
+
+    <Label text="Badges:" style="-fx-font-weight: bold;"/>
+    <ListView fx:id="badgeList" prefHeight="260"/>
+
+    <Button text="Refresh"
+            onAction="#refresh"
+            styleClass="nav-btn"/>
+</VBox>

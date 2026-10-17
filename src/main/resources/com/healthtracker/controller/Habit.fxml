@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/25"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.healthtracker.controller.HabitController"
+      spacing="14"
+      styleClass="page-root">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Page Title -->
+    <Label text="Habit" styleClass="page-title"/>
+
+    <!-- ✅ Progress section (keep your progress bar) -->
+    <VBox spacing="6" styleClass="progress-box">
+        <Label fx:id="progressLabel" text="Today Progress: 0%" styleClass="section-title"/>
+        <ProgressBar fx:id="progressBar" prefWidth="360" progress="0.0" styleClass="progress-bar"/>
+    </VBox>
+
+    <!-- List -->
+    <Label text="Habit List:" styleClass="section-title"/>
+    <ListView fx:id="habitList"
+              prefHeight="320"
+              styleClass="list-card"/>
+
+    <!-- Buttons -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button text="Add Habit" onAction="#openAddDialog" styleClass="nav-btn"/>
+        <Button text="Edit Selected" onAction="#openEditDialog" styleClass="nav-btn"/>
+        <Button text="Mark Completed Today" onAction="#markCompletedToday" styleClass="nav-btn"/>
+        <Button text="Delete Selected" onAction="#deleteSelected" styleClass="nav-btn"/>
+        <Button text="Refresh" onAction="#refreshList" styleClass="nav-btn"/>
+    </HBox>
+
+    <Label text="Tip: Select a habit first before Edit / Mark Completed / Delete."
+           styleClass="meta-text"/>
+
+</VBox>

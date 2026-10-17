@@ -1,0 +1,768 @@
+/* ===============================
+   Healio Theme (Pink UI)
+   =============================== */
+
+/* ===== APP ROOT ===== */
+.app-root {
+    -fx-background-color: #FFE2E2;
+    -fx-font-family: "Poppins";
+}
+
+/* For all pages (Dashboard/Habit/Reminder/Achievement root VBox) */
+.page-root {
+    -fx-background-color: #FFE2E2;
+    -fx-font-family: "Poppins";
+}
+
+/* ===== TOP NAV BAR ===== */
+.top-nav {
+    -fx-background-color: #FFE2E2;
+    -fx-border-color: rgba(0,0,0,0.05);
+    -fx-border-width: 0 0 1 0;
+}
+
+.brand-title {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 22px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #252525;
+}
+
+/* ===== BUTTONS ===== */
+.nav-btn {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+
+    -fx-background-color: #FF9191;
+    -fx-text-fill: white;
+
+    -fx-background-radius: 18;
+    -fx-padding: 10 18 10 18;
+    -fx-cursor: hand;
+}
+
+.nav-btn:hover {
+    -fx-background-color: #ff7f7f;
+}
+
+.nav-btn:pressed {
+    -fx-background-color: #ff6b6b;
+}
+
+/* ===== TITLES ===== */
+.page-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #252525;
+}
+
+.section-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #252525;
+}
+
+/* ===== MOTIVATION CARD ===== */
+.motivation-box {
+    -fx-background-color: white;
+    -fx-padding: 12 16;
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);
+}
+
+.motivation-text {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #252525;
+}
+
+/* ===== LISTVIEW CARD LOOK ===== */
+.list-card {
+    -fx-background-color: transparent;
+}
+
+/* outer container */
+.list-card .list-view {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-border-color: rgba(255,145,145,0.55);
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+    -fx-padding: 2;
+}
+
+/* the actual scroll/viewport area */
+.list-card .list-view .viewport {
+    -fx-background-color: transparent;
+}
+
+/* cells default */
+.list-card .list-cell {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 13px;
+    -fx-text-fill: #252525;
+    -fx-padding: 10 12;
+}
+
+/* cell hover */
+.list-card .list-cell:hover {
+    -fx-background-color: rgba(255,145,145,0.12);
+}
+
+/* cell selected (keep readable even with your category colors) */
+.list-card .list-cell:filled:selected,
+.list-card .list-cell:filled:selected:hover {
+    -fx-background-color: rgba(255,145,145,0.30);
+    -fx-text-fill: #252525;
+}
+
+/* ===== DEFAULT LISTVIEW (if you didn't add list-card class) ===== */
+.list-view {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-border-color: rgba(255,145,145,0.55);
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+}
+
+.dash-col {
+    -fx-background-color: rgba(255,255,255,0.35);
+    -fx-background-radius: 16;
+    -fx-padding: 12;
+}
+
+/* keep selected readable even if we set background color in code */
+.list-card .list-cell:filled:selected,
+.list-card .list-cell:filled:selected:hover {
+    -fx-border-color: rgba(0,0,0,0.15);
+    -fx-border-width: 0 0 0 4;
+    -fx-border-insets: 0;
+}
+
+/* ===== Mood Card ===== */
+.mood-box {
+    -fx-background-color: white;
+    -fx-padding: 12 14;
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);
+}
+
+.mood-title {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #252525;
+}
+
+.mood-value {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #FF9191;
+}
+
+.mood-combo {
+    -fx-font-family: "Poppins";
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(255,145,145,0.55);
+    -fx-border-width: 1;
+}
+
+/* ===== Mood Card ===== */
+.mood-box {
+    -fx-background-color: white;
+    -fx-padding: 12 14;
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);
+}
+
+.mood-display {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #252525;
+}
+
+.mood-icon {
+    -fx-cursor: hand;
+    -fx-opacity: 0.75;
+}
+
+.mood-icon:hover {
+    -fx-opacity: 1.0;
+    -fx-scale-x: 1.06;
+    -fx-scale-y: 1.06;
+}
+
+/* highlight selected mood icon */
+.mood-selected {
+    -fx-opacity: 1.0;
+    -fx-scale-x: 1.10;
+    -fx-scale-y: 1.10;
+    -fx-effect: dropshadow(gaussian, rgba(255,145,145,0.6), 12, 0, 0, 0);
+}
+
+/* ===== Mood icons effect ===== */
+.mood-icon {
+    -fx-cursor: hand;
+    -fx-opacity: 0.85;
+}
+
+.mood-icon:hover {
+    -fx-opacity: 1.0;
+    -fx-scale-x: 1.08;
+    -fx-scale-y: 1.08;
+}
+
+/* when selected (set by controller pseudo-class) */
+.mood-icon:selected {
+    -fx-opacity: 1.0;
+    -fx-scale-x: 1.18;
+    -fx-scale-y: 1.18;
+    -fx-effect: dropshadow(gaussian, rgba(255,145,145,0.55), 10, 0, 0, 2);
+}
+
+.progress-box {
+    -fx-background-color: rgba(255,255,255,0.35);
+    -fx-background-radius: 16;
+    -fx-padding: 10 12;
+}
+
+.progress-bar {
+    -fx-background-radius: 10;
+}
+.progress-bar .track {
+    -fx-background-color: rgba(255,255,255,0.9);
+    -fx-background-radius: 10;
+}
+.progress-bar .bar {
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+    -fx-background-color: #FF9191;
+}
+
+.mood-icon:hover {
+    -fx-opacity: 0.85;
+    -fx-cursor: hand;
+}
+
+.mood-selected {
+    -fx-effect: dropshadow(gaussian, rgba(255,145,145,0.9), 12, 0, 0, 0);
+}
+
+.meta-text {
+    -fx-font-size: 13px;
+    -fx-text-fill: rgba(0,0,0,0.65);
+}
+
+.login-card {
+    -fx-background-color: white;
+    -fx-background-radius: 18;
+    -fx-padding: 18 22;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 14, 0, 0, 3);
+    -fx-min-width: 540;
+}
+
+.error-text {
+    -fx-text-fill: #d00000;
+    -fx-font-weight: 600;
+}
+
+.text-field, .password-field {
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(255,145,145,0.55);
+    -fx-border-width: 1;
+    -fx-padding: 10 12;
+    -fx-font-size: 13px;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: rgba(255,145,145,0.95);
+}
+
+/* ===== Insights Cards ===== */
+.insight-card {
+    -fx-background-color: rgba(255,255,255,0.55);
+    -fx-background-radius: 18;
+    -fx-padding: 14 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 12, 0, 0, 2);
+}
+
+.insight-big {
+    -fx-font-size: 26px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #252525;
+}
+
+.insight-mid {
+    -fx-font-size: 18px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #252525;
+}
+
+/* ===============================
+   Window Menu (MenuBar) - White
+   =============================== */
+
+.app-menubar {
+    -fx-background-color: white;
+    -fx-border-color: rgba(0,0,0,0.08);
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 4 8;
+}
+
+/* menu titles (File / Window / Help) */
+.app-menubar .menu {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+}
+
+/* menu label text */
+.app-menubar .label {
+    -fx-text-fill: #333333;
+}
+
+/* hover on menu title */
+.app-menubar .menu:hover {
+    -fx-background-color: rgba(255,145,145,0.18);
+    -fx-background-radius: 6;
+}
+
+/* dropdown menu */
+.context-menu {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(0,0,0,0.08);
+    -fx-border-radius: 12;
+    -fx-padding: 6;
+}
+
+/* menu item text */
+.context-menu .menu-item .label {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 13px;
+    -fx-text-fill: #333333;
+}
+
+/* hover menu item */
+.context-menu .menu-item:hover {
+    -fx-background-color: rgba(255,145,145,0.20);
+    -fx-background-radius: 8;
+}
+
+.secondary-btn {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 14px;
+    -fx-font-weight: 700;
+
+    -fx-background-color: rgba(255,255,255,0.75);
+    -fx-text-fill: #252525;
+
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(255,145,145,0.55);
+    -fx-border-width: 1;
+
+    -fx-padding: 10 18 10 18;
+    -fx-cursor: hand;
+}
+
+.secondary-btn:hover {
+    -fx-background-color: rgba(255,255,255,0.95);
+}
+
+
+/* =========================
+   Healio Dialog Theme (WORKING)
+   Apply by: dialog.getDialogPane.getStyleClass.add("healio-dialog")
+   ========================= */
+
+.healio-dialog {
+    -fx-background-color: white;
+    -fx-padding: 18;
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(0,0,0,0.08);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 18, 0.2, 0, 8);
+}
+
+.healio-dialog .header-panel {
+    -fx-background-color: transparent;
+    -fx-padding: 12 12 6 12;
+}
+
+.healio-dialog .header-panel .label {
+    -fx-font-size: 20px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #222;
+}
+
+.healio-dialog .content {
+    -fx-padding: 8 12 12 12;
+}
+
+.healio-dialog .button-bar {
+    -fx-padding: 10 12 12 12;
+}
+
+.healio-dialog .button {
+    -fx-background-radius: 14;
+    -fx-padding: 8 18 8 18;
+    -fx-font-size: 14px;
+    -fx-font-weight: 700;
+}
+
+.healio-dialog .button:default {
+    -fx-background-color: #ff8fa3;
+    -fx-text-fill: white;
+    -fx-font-weight: 800;
+}
+
+.healio-dialog .button:cancel {
+    -fx-background-color: #f3f3f3;
+    -fx-text-fill: #333;
+    -fx-font-weight: 700;
+}
+
+.healio-dialog .text-field,
+.healio-dialog .combo-box {
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(255,145,145,0.55);
+    -fx-border-width: 1;
+    -fx-padding: 8 10 8 10;
+    -fx-font-size: 13px;
+}
+
+.healio-dialog .text-field:focused,
+.healio-dialog .combo-box:focused {
+    -fx-border-color: rgba(255,145,145,0.95);
+}
+
+/* =========================
+   Healio Inputs (ComboBox / DatePicker)
+   ========================= */
+
+/* ComboBox main box */
+.healio-combo, .healio-date {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+
+    -fx-background-color: rgba(255,255,255,0.85);
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(255,145,145,0.55);
+    -fx-border-width: 1;
+
+    -fx-padding: 6 10 6 10;
+}
+
+/* When focused */
+.healio-combo:focused, .healio-date:focused {
+    -fx-border-color: rgba(255,145,145,0.95);
+    -fx-border-width: 1.2;
+}
+
+/* ComboBox arrow button */
+.healio-combo .arrow-button,
+.healio-date .arrow-button {
+    -fx-background-color: rgba(255,145,145,0.18);
+    -fx-background-radius: 0 14 14 0;
+    -fx-padding: 6 10 6 10;
+}
+
+/* ComboBox / DatePicker arrow */
+.healio-combo .arrow,
+.healio-date .arrow {
+    -fx-background-color: rgba(0,0,0,0.55);
+}
+
+/* Dropdown list popup */
+.combo-box-popup .list-view {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(255,145,145,0.55);
+    -fx-border-width: 1;
+    -fx-padding: 4;
+}
+
+.combo-box-popup .list-cell {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 13px;
+    -fx-text-fill: #252525;
+    -fx-padding: 10 12;
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: rgba(255,145,145,0.16);
+}
+
+.combo-box-popup .list-cell:selected {
+    -fx-background-color: rgba(255,145,145,0.28);
+}
+
+/* DatePicker calendar popup */
+.date-picker-popup {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(255,145,145,0.55);
+    -fx-border-width: 1;
+}
+
+/* =========================
+   Healio Chart Styling
+   ========================= */
+
+.healio-chart {
+    -fx-background-color: transparent;
+}
+
+.healio-chart .chart-plot-background {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+}
+
+.healio-chart .chart-vertical-grid-lines,
+.healio-chart .chart-horizontal-grid-lines {
+    -fx-stroke: rgba(0,0,0,0.06);
+}
+
+.healio-chart .axis {
+    -fx-tick-label-fill: rgba(0,0,0,0.70);
+}
+
+.healio-chart .axis-label {
+    -fx-text-fill: rgba(0,0,0,0.70);
+    -fx-font-weight: 700;
+}
+
+/* bar color */
+.healio-chart .default-color0.chart-bar {
+    -fx-bar-fill: #FF9191;  /* pink */
+}
+
+/* second bar color (pending) */
+.healio-chart .default-color1.chart-bar {
+    -fx-bar-fill: #FFD0D0;  /* lighter pink */
+}
+
+/* =========================
+   Healio Chart Styling
+   ========================= */
+
+.healio-chart {
+    -fx-background-color: transparent;
+}
+
+.healio-chart .chart-plot-background {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-background-radius: 16;
+}
+
+.healio-chart .chart-vertical-grid-lines,
+.healio-chart .chart-horizontal-grid-lines {
+    -fx-stroke: rgba(0,0,0,0.06);
+}
+
+.healio-chart .axis {
+    -fx-tick-label-fill: rgba(0,0,0,0.70);
+}
+
+.healio-chart .axis-label {
+    -fx-text-fill: rgba(0,0,0,0.70);
+    -fx-font-weight: 700;
+}
+
+/* Bar colors */
+.healio-chart .default-color0.chart-bar {
+    -fx-bar-fill: #FF9191;  /* pink */
+}
+.healio-chart .default-color1.chart-bar {
+    -fx-bar-fill: #FFD0D0;  /* light pink */
+}
+
+/* Line colors */
+.healio-chart .default-color0.chart-series-line {
+    -fx-stroke: #FF9191;
+    -fx-stroke-width: 3px;
+}
+.healio-chart .default-color0.chart-line-symbol {
+    -fx-background-color: #FF9191, white;
+    -fx-background-insets: 0, 2;
+    -fx-background-radius: 10px;
+    -fx-padding: 5px;
+}
+
+/* ===============================
+   🌸 Healio Pink Chart Theme
+   =============================== */
+
+/* ---------- Line Chart ---------- */
+.chart {
+    -fx-background-color: transparent;
+}
+
+.chart-plot-background {
+    -fx-background-color: #FFF3F3;
+    -fx-background-radius: 16;
+}
+
+.chart-horizontal-grid-lines,
+.chart-vertical-grid-lines {
+    -fx-stroke: #FFD6D6;
+}
+
+.chart-series-line {
+    -fx-stroke-width: 3px;
+}
+
+/* Line color */
+.default-color0.chart-series-line {
+    -fx-stroke: #FF8C8C;
+}
+
+/* Line dots */
+.default-color0.chart-line-symbol {
+    -fx-background-color: #FF8C8C, white;
+    -fx-background-radius: 8px;
+    -fx-padding: 6px;
+}
+
+/* ---------- Bar Chart ---------- */
+.default-color0.chart-bar {
+    -fx-bar-fill: #FF9A9A;
+    -fx-background-radius: 8 8 0 0;
+}
+
+.default-color1.chart-bar {
+    -fx-bar-fill: #FFD1D1;
+    -fx-background-radius: 8 8 0 0;
+}
+
+/* Axis labels */
+.axis-label {
+    -fx-text-fill: #444;
+    -fx-font-weight: bold;
+}
+
+.axis-tick-label {
+    -fx-text-fill: #666;
+}
+
+/* Remove legend background (if ever shown) */
+.chart-legend {
+    -fx-background-color: transparent;
+}
+
+.btn-primary {
+    -fx-background-color: #ff8fa3;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-padding: 8 22;
+}
+
+.btn-secondary {
+    -fx-background-color: #ffe3ea;
+    -fx-text-fill: #333;
+    -fx-background-radius: 20;
+    -fx-padding: 8 22;
+}
+
+/* ===== Inputs ===== */
+.healio-input {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: #ff8fa3;
+    -fx-border-width: 2;
+    -fx-padding: 10 14;
+}
+
+/* ===== ComboBox (NOT grey) ===== */
+.healio-combo,
+.healio-combo.combo-box-base {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: #ff8fa3;
+    -fx-border-width: 2;
+    -fx-padding: 4 10;
+}
+
+/* arrow area */
+.healio-combo .arrow-button {
+    -fx-background-color: transparent;
+}
+.healio-combo .arrow {
+    -fx-background-color: #ff8fa3;
+}
+
+/* text shown in the combo */
+.healio-combo .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #333333;
+}
+
+/* dropdown list */
+.combo-box-popup .list-view {
+    -fx-background-color: white;
+    -fx-border-color: #ff8fa3;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: #ffe3ea;
+}
+.combo-box-popup .list-view .list-cell:selected {
+    -fx-background-color: #ff8fa3;
+    -fx-text-fill: white;
+}
+
+/* error label */
+.form-error {
+    -fx-text-fill: #d13b57;
+}
+
+/* ===============================
+   DIALOG BACKGROUND (PINK)
+   =============================== */
+
+/* Dialog pane itself */
+.dialog-pane.healio-dialog {
+    -fx-background-color: #ffe6ea;
+}
+
+/* Dialog content area */
+.dialog-pane.healio-dialog > .content {
+    -fx-background-color: #ffe6ea;
+}
+
+/* Habit / Reminder dialog root */
+.healio-pane {
+    -fx-background-color: #ffe6ea;
+}
+
+/* Optional: remove sharp edges */
+.dialog-pane {
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+}
+
+
+
+
+
+
+
+
+

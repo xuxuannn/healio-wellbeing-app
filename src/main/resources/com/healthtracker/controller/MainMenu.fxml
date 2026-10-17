@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.healthtracker.controller.MainMenuController"
+            styleClass="app-root">
+
+    <!-- ===== TOP AREA: MenuBar + Top Nav ===== -->
+    <top>
+        <VBox>
+
+            <!-- Window Menu (WHITE) -->
+            <MenuBar styleClass="app-menubar">
+                <menus>
+                    <Menu text="File">
+                        <items>
+                            <MenuItem text="Logout" onAction="#handleLogout"/>
+                            <SeparatorMenuItem/>
+                            <MenuItem text="Exit" onAction="#handleExit"/>
+                        </items>
+                    </Menu>
+
+                    <Menu text="Window">
+                        <items>
+                            <MenuItem text="Dashboard" onAction="#showDashboard"/>
+                            <MenuItem text="Insights" onAction="#showInsights"/>
+                            <MenuItem text="Reminder" onAction="#showReminder"/>
+                            <MenuItem text="Habit" onAction="#showHabit"/>
+                            <MenuItem text="Achievement" onAction="#showAchievement"/>
+                        </items>
+                    </Menu>
+
+                    <Menu text="Help">
+                        <items>
+                            <MenuItem text="About" onAction="#showAbout"/>
+                        </items>
+                    </Menu>
+                </menus>
+            </MenuBar>
+
+            <!-- Your existing top nav bar -->
+            <HBox spacing="14"
+                  alignment="CENTER_LEFT"
+                  styleClass="top-nav">
+                <padding>
+                    <Insets top="14" right="18" bottom="14" left="18"/>
+                </padding>
+
+                <ImageView fitWidth="26" fitHeight="26" preserveRatio="true">
+                    <image>
+                        <Image url="@/icon/app-icon.png"/>
+                    </image>
+                </ImageView>
+
+                <Label text="Healio" styleClass="brand-title"/>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <Button text="Dashboard" onAction="#showDashboard" styleClass="nav-btn"/>
+                <Button text="Insights" onAction="#showInsights" styleClass="nav-btn"/>
+                <Button text="Reminder" onAction="#showReminder" styleClass="nav-btn"/>
+                <Button text="Habit" onAction="#showHabit" styleClass="nav-btn"/>
+                <Button text="Achievement" onAction="#showAchievement" styleClass="nav-btn"/>
+                <Button text="Logout" onAction="#handleLogout" styleClass="nav-btn"/>
+            </HBox>
+
+        </VBox>
+    </top>
+
+    <!-- ===== CENTER CONTENT ===== -->
+    <center>
+        <StackPane fx:id="contentPane">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+        </StackPane>
+    </center>
+
+</BorderPane>
